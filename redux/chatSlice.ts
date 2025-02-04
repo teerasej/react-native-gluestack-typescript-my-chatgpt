@@ -8,6 +8,7 @@ interface Message {
 
 interface ChatState {
     chatHistory: Message[];
+    barcode: string;
 }
 
 const initialState: ChatState = {
@@ -17,6 +18,7 @@ const initialState: ChatState = {
         { text: 'How are you?', isSender: true },
         { text: 'I am good, thanks!', isSender: false },
     ],
+    barcode: ''
 };
 
 const chatSlice = createSlice({
@@ -26,6 +28,10 @@ const chatSlice = createSlice({
         addNewMessageToChatHistory: (state: ChatState, action: PayloadAction<Message>) => {
             console.log(`adding message to history: [${action.type}] ${action.payload}`);
             state.chatHistory.push(action.payload);
+        },
+        saveBarcode: (state: ChatState, action: PayloadAction<string>) => {
+            console.log(`saving barcode: ${action.payload}`);
+            state.barcode = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -40,6 +46,6 @@ const chatSlice = createSlice({
     }
 });
 
-export const { addNewMessageToChatHistory } = chatSlice.actions;
+export const { addNewMessageToChatHistory, saveBarcode } = chatSlice.actions;
 
 export default chatSlice.reducer;

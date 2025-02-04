@@ -21,6 +21,12 @@ export default function Home() {
             <ButtonText>Ask AI</ButtonText>
           </Button>
         </Link>
+
+        <Link href="/barcode" asChild>
+          <Button>
+            <ButtonText>Scan Barcode</ButtonText>
+          </Button>
+        </Link>
       </VStack>
 
     </>
