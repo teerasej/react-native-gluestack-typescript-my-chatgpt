@@ -19,7 +19,7 @@ export default function Home() {
       <VStack className="flex-1 p-2" space="md">
 
         <Image source={require('assets/images/favicon.png')} size="none" />
-        <Image source={{uri:'https://github.com/user-attachments/assets/37468131-3ae3-44c0-a7ab-7b4606184b62'}} size="none" />
+        <Image source={{uri:'https://github.com/teerasej/react-native-gluestack-typescript-my-chatgpt/blob/eas-build/assets/images/thaiairways.png?raw=true'}} alt="logo"/>
 
         <Link href="/chat" asChild>
           <Button>
